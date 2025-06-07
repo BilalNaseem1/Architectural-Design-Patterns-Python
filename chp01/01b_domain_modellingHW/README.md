@@ -109,4 +109,44 @@ library_project/
 
 ---
 
-Would you like me to provide starter code for `Book`, `BookCopy`, or the first test to get you going?
+
+## Hint
+
+Absolutely! Here are hints to guide you as you build `model.py` for the **Library Book Reservation System**:
+
+---
+
+### ✅ Step 1: Start with the **`Book`** class
+
+* Use a frozen `@dataclass` here.
+* It’s just a **value object** — no methods needed.
+* Think: What uniquely identifies a book regardless of copies?
+
+---
+
+### ✅ Step 2: Create the **`BookCopy`** class
+
+* Each copy has a unique ID and belongs to a `Book` via its ISBN.
+* You’ll need to **track whether it’s reserved**.
+* Internally store the ID of the member who reserved it (if any).
+* Add a method to **reserve a copy**, but only if it’s available.
+* Add a method to **cancel** the reservation.
+* Make a property for `is_reserved`.
+
+---
+
+### ✅ Step 3: Add the **`Library`** class
+
+* Think of this as the "Batch Manager".
+* It manages a **collection of BookCopy objects**.
+* Add a method to **find available copies** by ISBN.
+* Add a method to **reserve an available copy** for a member.
+
+---
+
+### 🔁 General Hints
+
+* Use a `set()` or `list` to track all the `BookCopy` objects.
+* Use helper methods in `Library` to encapsulate logic — e.g., searching, filtering.
+* Don’t overthink the database — this is just in-memory logic.
+* Follow the same separation of concerns style as you did with `Batch` and `OrderLine`.
